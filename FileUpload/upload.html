@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Upload File</title>
+    <link rel="stylesheet" href="./upload.css" />
+  </head>
+
+  <body>
+    
+    <div class="topnav">
+      <a class="active2" >FILE UPLOAD</a>
+      <a class="active" href="index.html">Home</a>
+      <a class="active"  href="rules.html">Rules</a>
+      <a class="active"  href="storage.html">Storage</a>
+      <a href="#about">About</a>
+    </div>
+    <div class="custom_file_upload">
+      <h1>UPLOAD FILE(WITHOUT FILTER)</h1>
+      <input type="file" name="file" id="file" class="file"/>
+
+      <div class="file_upload">
+        <input
+        type="button"
+        id="btn_uploadfile"
+        value="Upload"
+        onclick="uploadFile();"
+      />
+      </div>
+      
+    </div>
+    <script type="text/javascript">
+      function uploadFile() {
+        var files = document.getElementById("file").files;
+
+        if (files.length > 0) {
+          var formData = new FormData();
+          formData.append("file", files[0]);
+
+          var xhttp = new XMLHttpRequest();
+
+          // Set POST method and ajax file path
+          xhttp.open("POST", "upload.php", true);
+
+          // call on request changes state
+          xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+              var number = this.responseText;
+              alert(number);
+            }
+          };
+
+          // Send request with data
+          xhttp.send(formData);
+        } else {
+          alert("Please select a file");
+        }
+      }
+    </script>
+
+<div class="footer">
+  <p>Test</p>
+</div>
+</body> 
+</html>
+
+

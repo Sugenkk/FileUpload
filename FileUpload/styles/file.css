@@ -1,0 +1,95 @@
+body{
+  background-color: rgb(168, 235, 223);
+  position:relative
+}
+h1{
+  color: rgb(26, 23, 73);
+  text-align: center;
+}
+
+.main{
+  margin: auto;
+  width: 60%;
+  
+  padding: 10px;
+}
+
+.link{
+  margin: auto;
+  text-align: center;
+}
+
+
+a:link, a:visited {
+  
+  background-color: white;
+  color: rgb(26, 23, 73);
+  border: 2px solid rgb(26, 23, 73);
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+a:hover, a:active {
+  background-color: rgb(26, 23, 73);
+  color: rgb(168, 235, 223);
+}
+
+
+.form-group-file {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.file {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  height: 2.5rem;
+}
+
+input#file {
+  display: none;
+}
+
+.file-custom {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 0;
+  height: 2.5rem;
+  padding: 0.5rem 1rem;
+  line-height: 1.5;
+  color: #555;
+  background-color: #fff;
+  border: 0.075rem solid #ced4da;
+  border-radius: 0.25rem;
+  user-select: none;
+}
+
+.file-custom:hover {
+  box-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.05);
+}
+
+.file-custom:before {
+  position: absolute;
+  top: -0.075rem;
+  right: -0.075rem;
+  bottom: -0.075rem;
+  z-index: 6;
+  display: block;
+  content: 'Browse';
+  padding: 0.5rem 1rem;
+  line-height: 1.5;
+  color: #555;
+  background-color: #eee;
+  border: 0.075rem solid #ced4da;
+  border-radius: 0 0.25rem 0.25rem 0;
+}
+
+.file-custom:after {
+  content: 'Choose file...';
+}
